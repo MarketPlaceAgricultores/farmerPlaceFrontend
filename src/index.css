@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url('https://www.getdroidpro.com/wp-content/uploads/2019/10/Fruit-Wallpapers-43-3840-x-2400-1.jpg');
   background-size: cover;
   min-height: 100vh;
   display: flex;

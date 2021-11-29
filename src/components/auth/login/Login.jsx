@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Fragment, useRef } from "react";
 import "./login.css";
+import history from '../../history';
+
 
 export default function Login() {
   const email = useRef();
@@ -20,10 +22,12 @@ export default function Login() {
       }
     );
     console.log(data);
+    history.push('/main')
   };
 
   return (
     <Fragment>
+      <div className="principalcontainerLogin">
         <div className="container">
             <div className="content">
             <h3>Bienvenido</h3>
@@ -55,7 +59,7 @@ export default function Login() {
         Enviar
       </button>{" "}
             </div>
-      
+            </div>
       </div>
     </Fragment>
   );
