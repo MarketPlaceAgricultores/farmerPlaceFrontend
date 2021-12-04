@@ -9,16 +9,13 @@ export default function Register() {
 
   const signIn = async () => {
     let form = new URLSearchParams();
-    form.append("name", name.current.value);
-    form.append("email", email.current.value);
-    form.append("password", pass.current.value);
+    form.append("nombre", name.current.value);
+    form.append("correo", email.current.value);
+    form.append("contrasena", pass.current.value);
     console.log(form);
     const data = await axios.post(
-      process.env.REACT_APP_API_URL + "auth/register",
-      form,
-      {
-        headers: { Accept: "application/json" },
-      }
+      process.env.REACT_APP_API_URL + "root/crear",
+      form
     );
     console.log(data);
   };

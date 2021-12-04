@@ -11,11 +11,11 @@ export default function Login() {
   const signIn = async () => {
     let form = new URLSearchParams();
     console.log(email, pass);
-    form.append("email", email.current.value);
-    form.append("password", pass.current.value);
+    form.append("correo", email.current.value);
+    form.append("contrasena", pass.current.value);
     console.log(form);
     const data = await axios.post(
-      process.env.REACT_APP_API_URL + "auth/login",
+      process.env.REACT_APP_API_URL + "root/login",
       form,
       {
         headers: { Accept: "application/json" },
