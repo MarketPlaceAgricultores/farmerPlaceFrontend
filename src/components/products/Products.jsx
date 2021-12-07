@@ -1,17 +1,21 @@
 import axios from "axios";
 import React, { Fragment, useRef } from "react";
-import "./register.css";
+import "./products.css";
 
-export default function Register() {
-  const name = useRef();
-  const email = useRef();
-  const pass = useRef();
+export default function Products() {
+  const name          = useRef();
+  const descripcion   = useRef();
+  const unidadMedida  = useRef();
+  const precioXunidad = useRef();
+  const urlImagen     = useRef();
 
   const signIn = async () => {
     let form = new URLSearchParams();
     form.append("nombre", name.current.value);
-    form.append("correo", email.current.value);
-    form.append("contrasena", pass.current.value);
+    form.append("descripcion", descripcion.current.value);
+    form.append("unidadMedida", unidadMedida.current.value);
+    form.append("precioXunidad", precioXunidad.current.value);
+    form.append("urlImagen", urlImagen.current.value);
     console.log(form);
     const data = await axios.post(
       process.env.REACT_APP_API_URL + "root/crear",
@@ -22,7 +26,7 @@ export default function Register() {
 
   return (
     <Fragment>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -40,38 +44,58 @@ export default function Register() {
           </ul>
         </div>
       </nav>
-      <div className="principalcontainerRegister">
+      <div className="principalcontainerProducts">
       <div className="container">
         <div className="content">
-          <h3>Registrate</h3>
+          <h3>Ingresa tu producto</h3>
           <div className="form-group">
-            <label>Nombre</label>
+            <label>Nombre del producto</label>
             <input
               type="text"
               id="name"
               ref={name}
               className="form-control"
-              placeholder="Digite su nombre"
+              placeholder="Digite el nombre"
             />
           </div>
           <div className="form-group">
-            <label>Correo electrónico</label>
+            <label>Descripción</label>
             <input
-              type="email"
-              id="email"
-              ref={email}
+              type="text"
+              id="descripcion"
+              ref={descripcion}
               className="form-control"
-              placeholder="Digite su correo electronico"
+              placeholder="Digite la descripción"
             />
           </div>
           <div className="form-group">
-            <label>Contraseña</label>
+            <label>Unidad de medida</label>
             <input
-              type="password"
-              id="pass"
-              ref={pass}
+              type="text"
+              id="unidadMedida"
+              ref={unidadMedida}
               className="form-control"
-              placeholder="Digite su contraseña"
+              placeholder="Digite una unidad de medida"
+            />
+          </div>
+          <div className="form-group">
+            <label>Precio por unidad</label>
+            <input
+              type="number"
+              id="precioXunidad"
+              ref={precioXunidad}
+              className="form-control"
+              placeholder="Digite el precio por unidad"
+            />
+          </div>
+          <div className="form-group">
+            <label>Imagen del producto</label>
+            <input
+              type="text"
+              id="urlImagen"
+              ref={urlImagen}
+              className="form-control"
+              placeholder="Digite la url de la imagen"
             />
           </div>
           <button

@@ -27,6 +27,24 @@ export default function Login() {
 
   return (
     <Fragment>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:3000/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:3000/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:3000/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:3000/main">Main</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div className="principalcontainerLogin">
         <div className="container">
             <div className="content">
