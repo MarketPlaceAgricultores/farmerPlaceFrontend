@@ -18,7 +18,7 @@ export default function Products() {
     form.append("urlImagen", urlImagen.current.value);
     console.log(form);
     const data = await axios.post(
-      process.env.REACT_APP_API_URL + "root/crear",
+      process.env.REACT_APP_API_URL + "product/crear",
       form
     );
     console.log(data);
